@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Рецепты улет (MAKET_DIV)</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                overflow: hidden;
+            }
+            .header {
+                width: 100%;
+                background-color: #824545;
+                padding: 10px;
+                text-align: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 50px;
+                z-index: 10;
+            }
+            .container {
+                display: flex;
+                flex: 1;
+                padding: 10px;
+                margin-left: 250px;
+                margin-top: 50px;
+                overflow: hidden;   
+                /* Если содержимое элемента (например, текст,
+                 изображения или другие элементы) выходит за пределы его области
+                  (ширину или высоту), то с помощью overflow: hidden; это переполненное содержимое будет скрыто.
+                 Оно не будет отображаться, и не появится полоса прокрутки. */
+            }
+            .content {
+                flex-grow: 1;
+                padding: 15px;
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                overflow-x: auto;
+            }
+            .content img {
+                width: 200px;
+                height: auto;
+                border-radius: 10px;
+                flex-shrink: 0;
+
+                /* Указывает, насколько элемент может
+                уменьшаться в размерах по сравнению с другими элементами 
+                в flex-контейнере, когда не хватает места.
+                Значение 0:
+                flex-shrink: 0;: Элемент не будет уменьшаться. Это значит,
+                что при наличии недостатка пространства в контейнере 
+                этот элемент сохранит свои исходные размеры и не будет сжиматься.
+                            } */
+            }
+            .content div {
+                flex-grow: 1;
+
+
+                /*flex-grow: Указывает, насколько элемент может увеличиваться 
+                в размерах по сравнению с другими элементами в flex-контейнере.
+                Значение 1:
+                flex-grow: 1;: Элемент будет занимать всё доступное пространство в контейнере,
+                которое остается после размещения остальных элементов. Если у нескольких элементов установлено flex-grow: 1;,
+                они будут расти равномерно, заполняя свободное пространство.*/
+
+            }
+            .menu {
+                width: 250px;
+                background-color: #3e2121;
+                padding: 10px;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                height: calc(100vh - 60px);
+                overflow-y: auto;
+            }
+            h1, h2 {
+                color: #ffffff;
+                margin-top: 0;
+            }
+            h3 {
+                color: #333;
+                margin-top: 0;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 15px;
+            }
+            ul li a {
+                text-decoration: none;
+                color: #d1d1d1;
+            }
+            ul li a:hover {
+                color: #000;
+            }
+            .footer {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                background-color: #5c3131;
+                font-size: 1.2em;
+                color: #555;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <h2>Рецепты улет</h2>
+        </header>
+        <div class="container">
+            <aside class="menu">
+                <a href="pageWithForm.html">Форма</a>
+                <ul>
+                    <li><a href="https://oz.by/?digiSearch=true&term=гарри%20поттер&params=%7Csort%3DDEFAULT">Напитки</a></li>
+                    <li><a href="https://oz.by/books/more101029040.html">Что приготовить на ужин?</a></li>
+                    <li><a href="https://oz.by/books/more10686464.html">ПП рецепты</a></li>
+                    <li><a href="https://oz.by/books/more10686464.html">Пироги</a></li>
+                    <li><a href="https://oz.by/books/more101029040.html">Дубайский шоколад</a></li>
+                    <li><a href="https://oz.by/books/more10686464.html">Кекс за 5 минут</a></li>
+                    <li><a href="https://oz.by/books/more101029040.html">Печенье</a></li>
+                    <li><a href="https://oz.by/books/more10686464.html">Котлеты</a></li>
+                    <li><a href="https://oz.by/books/more101029040.html">Курица</a></li>
+                    <li><a href="https://oz.by/books/more10686464.html">Отбивные</a></li>
+                    <li><a href="https://oz.by/books/more101029040.html">Салаты</a></li>
+                    <li><a href="https://oz.by/books/more10686464.html">Закуски</a></li>
+                    <li><a href="https://oz.by/books/more10686464.html">Десерты</a></li>
+                    <li><a href="https://oz.by/books/more101029040.html">Блинчики</a></li>
+                    <li><a href="https://oz.by/books/more10686464.html">Варенье</a></li>
+                    <li><a href="https://oz.by/books/more101029040.html">Компот</a></li>
+                </ul>
+            </aside>
+            <main class="content">
+                <img src="https://avatars.mds.yandex.net/i?id=111282f2dd2c8ae0bab3ed3dbde9746e61045a55-9842162-images-thumbs&n=13" alt="lavash">
+                <div>
+                    <h3>Конвертики из лаваша с разными начинками на сковороде</h3>
+                    <p>Сочные и хрустящие! На завтрак, в дорогу, на работу. Конвертики из лаваша с разными начинками на сковороде - это очень аппетитное блюдо на скорую руку. Подойдут они для любого случая: в качестве перекуса, сытного завтрака, к чаю. Продукты для начинки можно выбирать любые по вкусу.
+                        Мы нашли парадоксальное, но тем и прекрасное решение, придумав с блинами рецепты салатов. Потому что, когда под конец Масленицы уже хочется бросаться на стену от количества съеденного теста, а следовательно — калорий, неплохо бы разбавить блины какой-нибудь клетчаткой, вроде фруктов или зеленых листьев.
+                    </p>
+                </div>
+            </main>
+        </div>
+        <footer class="footer">
+            <h2>ПРИЯТНОГО АППЕТИТА</h2>
+        </footer>
+    </body>
+    </html>
