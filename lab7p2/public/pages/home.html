@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Добро пожаловать в Кулинарный сборник</h1>
+    </div>
+    <div class="container home-page">
+        <p>Это приложение содержит коллекцию вкусных и проверенных рецептов на все случаи жизни.</p>
+        <p>От простых повседневных блюд до изысканных кулинарных шедевров - у нас есть рецепты на любой вкус!</p>
+        <button class="btn" onclick="navigateTo('recipes')">Посмотреть рецепты</button>
+        <button class="btn" onclick="loadRecipesFromJson()">Загрузить все рецепты (JSON)</button>
+        <button class="btn" onclick="downloadJsonFile()">Скачать JSON с рецептами</button>
+        <div id="json-recipes-container" style="margin-top: 20px;"></div>
+    </div>
+</body>
+</html>
