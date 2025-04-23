@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Все рецепты</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Кулинарные рецепты</h1>
+    <a href="/api/recipes/new" class="btn">Добавить новый рецепт</a>
+    
+    <div class="recipes-list">
+      <% recipes.forEach(recipe => { %>
+        <div class="recipe-card">
+          <h2><%= recipe.title %></h2>
+          <p><strong>Категория:</strong> <%= recipe.category %></p>
+          <p><strong>Ингредиенты:</strong> <%= recipe.ingredients.join(', ') %></p>
+          <div class="actions">
+            <a href="/api/recipes/<%= recipe.id %>/edit" class="btn">Редактировать</a>
+            <button class="btn delete" data-id="<%= recipe.id %>">Удалить</button>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
