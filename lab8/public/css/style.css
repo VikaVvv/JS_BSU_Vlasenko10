@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .btn {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #45a049;
+  }
+  
+  .recipes-list {
+    margin-top: 20px;
+  }
+  
+  .recipe-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+  
+  .recipe-card h2 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+  
+  .actions {
+    margin-top: 10px;
+  }
+  
+  .delete {
+    background: #e74c3c;
+  }
+  
+  .delete:hover {
+    background: #c0392b;
+  }
+  /* Добавить в конец файла */
+
+.controls {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form input, .search-form select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.pagination .active {
+  background: #2c3e50;
+  cursor: default;
+}
+
+.recipe-card {
+  transition: all 0.3s ease;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+/* Стили формы */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}

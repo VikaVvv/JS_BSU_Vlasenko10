@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Все рецепты</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Кулинарные рецепты</h1>
+    <a href="/api/recipes/new" class="btn">Добавить новый рецепт</a>
+    
+    <!-- Форма поиска и сортировки -->
+    <div class="controls">
+      <form method="GET" action="/api/recipes" class="search-form">
+        <input type="text" name="search" placeholder="Поиск по названию" value="<%= searchQuery %>">
+        <select name="sort">
+          <option value="asc" <%= sortOrder === 'asc' ? 'selected' : '' %>>По названию (А-Я)</option>
+          <option value="desc" <%= sortOrder === 'desc' ? 'selected' : '' %>>По названию (Я-А)</option>
+        </select>
+        <button type="submit" class="btn">Применить</button>
+      </form>
+    </div>
+    
+    <div class="recipes-list">
+      <% if (recipes.length === 0) { %>
+        <p>Рецепты не найдены</p>
+      <% } else { %>
+        <% recipes.forEach(recipe => { %>
+          <div class="recipe-card">
+            <h2><%= recipe.title %></h2>
+            <p><strong>Категория:</strong> <%= recipe.category %></p>
+            <p><strong>Ингредиенты:</strong> <%= recipe.ingredients.join(', ') %></p>
+            <div class="actions">
+              <a href="/api/recipes/<%= recipe.id %>/edit" class="btn">Редактировать</a>
+              <button class="btn delete" data-id="<%= recipe.id %>">Удалить</button>
+            </div>
+          </div>
+        <% }); %>
+      <% } %>
+    </div>
+    <form action="/api/recipes" method="POST">
+      <input type="text" name="title" placeholder="Название рецепта" required>
+      <input type="text" name="category" placeholder="Категория" required>
+      <textarea name="ingredients" placeholder="Ингредиенты (через запятую)" required></textarea>
+      <button type="submit">Добавить рецепт</button>
+    </form>
+    <!-- Пагинация -->
+    <% if (totalPages > 1) { %>
+      <div class="pagination">
+        <% if (currentPage > 1) { %>
+          <a href="/api/recipes?page=<%= currentPage-1 %><%= searchQuery ? `&search=${searchQuery}` : '' %><%= sortOrder ? `&sort=${sortOrder}` : '' %>" class="btn">Предыдущая</a>
+        <% } %>
+        
+        <% for (let i = 1; i <= totalPages; i++) { %>
+          <% if (i === currentPage) { %>
+            <span class="btn active"><%= i %></span>
+          <% } else { %>
+            <a href="/api/recipes?page=<%= i %><%= searchQuery ? `&search=${searchQuery}` : '' %><%= sortOrder ? `&sort=${sortOrder}` : '' %>" class="btn"><%= i %></a>
+          <% } %>
+        <% } %>
+        
+        <% if (currentPage < totalPages) { %>
+          <a href="/api/recipes?page=<%= currentPage+1 %><%= searchQuery ? `&search=${searchQuery}` : '' %><%= sortOrder ? `&sort=${sortOrder}` : '' %>" class="btn">Следующая</a>
+        <% } %>
+      </div>
+    <% } %>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
